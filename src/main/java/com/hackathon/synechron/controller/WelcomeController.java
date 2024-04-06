@@ -1,10 +1,8 @@
 package com.hackathon.synechron.controller;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.concurrent.TimeUnit;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +19,7 @@ public class WelcomeController {
 		return "Hello " + name;
 	}
 
-	@GetMapping("/AIDA/{number}")
+	@GetMapping("/aida/{number}")
 	public String light(@PathVariable String number) {
 		try {
 
