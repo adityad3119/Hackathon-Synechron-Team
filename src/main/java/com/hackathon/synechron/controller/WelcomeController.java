@@ -14,22 +14,25 @@ import com.pi4j.io.gpio.RaspiPin;
 public class WelcomeController {
 
 	private static GpioPinDigitalOutput pin;
-	
+
 	@GetMapping("/welcome/{name}")
 	public String welcome(@PathVariable String name) {
 		return "Hello " + name;
 	}
-	
+
 	@GetMapping("/light")
-    public String light() {
-        if (pin == null) {
-            GpioController gpio = GpioFactory.getInstance();
-            pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLED", PinState.LOW);
-        }
+	public String light() {
+		try {
+			if (pin == null) {
+				GpioController gpio = GpioFactory.getInstance();
+				pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLED", PinState.LOW);
+			}
 
-        pin.toggle();
+			pin.toggle();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return "OK";
+	}
 
-        return "OK";
-    }
-	
 }
