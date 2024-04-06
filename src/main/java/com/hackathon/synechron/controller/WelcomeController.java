@@ -11,4 +11,6 @@ public class WelcomeController {
 	public String welcome(@PathVariable String name) {
 		return "Hello " + name;
 	}
+
+	
 }
