@@ -35,13 +35,13 @@ public class WelcomeController {
 	            case "1":
 	            	//process = Runtime.getRuntime().exec(
 	            		//	"cmd /c on.bat", null, new File("C:\\workspace\\"));
-	            	process = Runtime.getRuntime().exec("/home/conor/synechron/off.sh");
+	            	process = Runtime.getRuntime().exec("/home/conor/synechron/on.sh");
 	                System.out.println("powering ON your devices");
 	                break;
 	            case "0":
 	            	//process = Runtime.getRuntime().exec(
 	            		//	"cmd /c off.bat", null, new File("C:\\workspace\\"));
-	            	process = Runtime.getRuntime().exec("/home/conor/synechron/on.sh");
+	            	process = Runtime.getRuntime().exec("/home/conor/synechron/off.sh");
 	                System.out.println("powering OFF your devices");
 	                break;
 	            default:
